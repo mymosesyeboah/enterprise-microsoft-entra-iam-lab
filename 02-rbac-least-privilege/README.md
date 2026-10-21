@@ -55,16 +55,41 @@ In the Global Administrator assignments view, **Add assignments** was disabled f
 
 ## Evidence
 
-The following sanitized screenshots are prepared for publication in the `evidence/` directory. This page will embed them after the image upload is verified.
+### 1. Dedicated standard and admin identities
 
-| File | Evidence |
-| --- | --- |
-| `01-standard-and-admin-identities.png` | Standard and dedicated admin identities |
-| `02-excessive-global-administrator.png` | Initial permanent Global Administrator role |
-| `03-helpdesk-administrator-remediation.png` | Remediated permanent Helpdesk Administrator role |
-| `04-password-reset-capability.png` | Delegated user password-reset control |
-| `05-password-reset-success.png` | Successful reset confirmation, with temporary password redacted |
-| `06-global-admin-assignment-denied.png` | Disabled Add assignments action in Global Administrator view |
+The ordinary user and dedicated administrative identity are distinct accounts.
+
+![Dedicated standard and admin identities](evidence/01-standard-and-admin-identities.png)
+
+### 2. Initial excessive privilege
+
+The administrative identity held a permanently active Global Administrator role, exceeding its helpdesk requirement.
+
+![Initial excessive privilege](evidence/02-excessive-global-administrator.png)
+
+### 3. Least-privilege role remediation
+
+The Global Administrator assignment was replaced by a Helpdesk Administrator assignment.
+
+![Least-privilege role remediation](evidence/03-helpdesk-administrator-remediation.png)
+
+### 4. Positive authorization: password-reset option
+
+The delegated administrator could initiate a password reset for a nonprivileged test user.
+
+![Positive authorization: password-reset option](evidence/04-password-reset-capability.png)
+
+### 5. Password-reset result
+
+The UI confirmed the password reset succeeded. The temporary password is deliberately not shown.
+
+![Password-reset result](evidence/05-password-reset-success.png)
+
+### 6. Negative authorization: role management
+
+The Add assignments control for Global Administrator was disabled for the delegated account; this is UI-level evidence, not an exhaustive permissions test.
+
+![Negative authorization: role management](evidence/06-global-admin-assignment-denied.png)
 
 ## Result
 
