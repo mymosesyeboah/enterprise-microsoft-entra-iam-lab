@@ -41,6 +41,7 @@ Microsoft Entra ID; Microsoft Authenticator; Conditional Access; Privileged Iden
 ## Lab documentation
 - [01 — Identity foundation](01-identity-foundation/README.md)
 - [02 — RBAC and least privilege](02-rbac-least-privilege/README.md)
+- [03 — Authentication and MFA](03-authentication-mfa/README.md)
 - Additional lab write-ups and **sanitized** evidence will be published incrementally.
 
 ## Current limitations
