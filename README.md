@@ -21,7 +21,7 @@ Contoso Financial Services has IT, Finance, HR, Sales, and Security departments.
 | 02 — RBAC and least privilege | Tested overprivileged Global Administrator assignment; remediated to Helpdesk Administrator; performed positive and negative authorization checks | Narrative documented; screenshots pending redaction |
 | 03 — Authentication and MFA | Examined tenant method policy and user registration; tested Microsoft Authenticator; inspected unsuccessful and successful sign-in records; tested Temporary Access Pass use | Narrative documented; screenshots pending redaction |
 | 04 — Conditional Access | Validated Finance-pilot and all-users MFA policies, report-only evaluation, enforced location blocking, emergency-access exclusion, and restored access | [Case study published](04-conditional-access/README.md); evidence upload pending |
-| 05 — Joiner, mover, leaver | Simulated changes to group membership and validated disabled-account sign-in failure | Narrative documented; screenshots pending redaction |
+| 05 — Joiner, mover, leaver | Provisioned Finance identity; detected and remediated access accumulation on transfer to Sales; disabled account, revoked sessions, and validated sign-in failure (50057) | [Case study published](05-joiner-mover-leaver/README.md); evidence upload pending |
 | 06 — Privileged Identity Management | Replaced a standing Helpdesk Administrator role with eligible assignment; configured MFA, justification, and limited activation; verified activation and deactivation audit events | Narrative documented; screenshots pending redaction |
 | 07 — Identity governance | Performed a Finance group access review, recorded approval/denial decisions, and verified group membership remediation and audit activity | Narrative documented; screenshots pending redaction |
 | 08 — External identities | Configured guest collaboration settings; invited and redeemed an external guest; separated guest access into a dedicated external-auditor group | Narrative documented; screenshots pending redaction |
@@ -43,6 +43,7 @@ Microsoft Entra ID; Microsoft Authenticator; Conditional Access; Privileged Iden
 - [02 — RBAC and least privilege](02-rbac-least-privilege/README.md)
 - [03 — Authentication and MFA](03-authentication-mfa/README.md)
 - [04 — Conditional Access](04-conditional-access/README.md)
+- [05 — Joiner, mover, leaver](05-joiner-mover-leaver/README.md)
 - Additional lab write-ups and **sanitized** evidence will be published incrementally.
 
 ## Current limitations
