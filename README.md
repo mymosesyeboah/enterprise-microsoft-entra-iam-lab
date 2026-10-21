@@ -20,7 +20,7 @@ Contoso Financial Services has IT, Finance, HR, Sales, and Security departments.
 | 01 — Identity foundation | Created fictional departmental identities and security groups; identified and corrected inappropriate Finance group membership | Narrative documented; screenshots pending redaction |
 | 02 — RBAC and least privilege | Tested overprivileged Global Administrator assignment; remediated to Helpdesk Administrator; performed positive and negative authorization checks | Narrative documented; screenshots pending redaction |
 | 03 — Authentication and MFA | Examined tenant method policy and user registration; tested Microsoft Authenticator; inspected unsuccessful and successful sign-in records; tested Temporary Access Pass use | Narrative documented; screenshots pending redaction |
-| 04 — Conditional Access | Configured and tested MFA and location-based policies; compared report-only results with enforced decisions; maintained emergency-access exclusion | Narrative documented; screenshots pending redaction |
+| 04 — Conditional Access | Validated Finance-pilot and all-users MFA policies, report-only evaluation, enforced location blocking, emergency-access exclusion, and restored access | [Case study published](04-conditional-access/README.md); evidence upload pending |
 | 05 — Joiner, mover, leaver | Simulated changes to group membership and validated disabled-account sign-in failure | Narrative documented; screenshots pending redaction |
 | 06 — Privileged Identity Management | Replaced a standing Helpdesk Administrator role with eligible assignment; configured MFA, justification, and limited activation; verified activation and deactivation audit events | Narrative documented; screenshots pending redaction |
 | 07 — Identity governance | Performed a Finance group access review, recorded approval/denial decisions, and verified group membership remediation and audit activity | Narrative documented; screenshots pending redaction |
@@ -42,6 +42,7 @@ Microsoft Entra ID; Microsoft Authenticator; Conditional Access; Privileged Iden
 - [01 — Identity foundation](01-identity-foundation/README.md)
 - [02 — RBAC and least privilege](02-rbac-least-privilege/README.md)
 - [03 — Authentication and MFA](03-authentication-mfa/README.md)
+- [04 — Conditional Access](04-conditional-access/README.md)
 - Additional lab write-ups and **sanitized** evidence will be published incrementally.
 
 ## Current limitations
