@@ -37,37 +37,34 @@ Establish identifiable workforce accounts and consistent departmental group memb
 ### 1. Provisioned workforce identities
 The user inventory shows the fictional tenant accounts used for departmental identity administration.
 
-![Entra ID user inventory](01-users-inventory.png)
+![Entra ID user inventory](evidence/01-users-inventory.png)
 
 ### 2. Verified identity attributes
 Ama Boateng's user properties show her Finance department, Financial Analyst job title, and Contoso company association.
 
-![Finance user attributes](02-user-business-attributes.png)
+![Finance user attributes](evidence/02-user-business-attributes.png)
 
 ### 3. Established departmental security groups
 Five assigned security groups provide separate departmental membership boundaries.
 
-![Department security groups](03-department-security-groups.png)
+![Department security groups](evidence/03-department-security-groups.png)
 
 ### 4. Established the Finance baseline
 Only Ama Boateng and Kwame Asare appear as direct Finance group members.
 
-![Baseline Finance group membership](04-finance-membership-baseline.png)
+![Baseline Finance group membership](evidence/04-finance-membership-baseline.png)
 
 ### 5. Simulated excessive membership
 Sarah Osei, an HR employee, was deliberately added to the Finance security group to represent an unauthorized departmental entitlement.
 
-![Inappropriate Finance group membership](05-finance-membership-finding.png)
+![Inappropriate Finance group membership](evidence/05-finance-membership-finding.png)
 
 ### 6. Remediated and verified
 Sarah was removed. The Finance group returned to its expected two direct members.
 
-![Finance membership after remediation](06-finance-membership-remediated.png)
+![Finance membership after remediation](evidence/06-finance-membership-remediated.png)
 
 **Evidence interpretation:** Screenshots show Entra directory configuration and group membership changes. They do not demonstrate actual Finance application or dataset access.
 
 ## Outcome
 Demonstrated a repeatable identity foundation and a practical least-privilege control cycle: **baseline → access anomaly → investigation → remediation → verification**.
-
-## Interview takeaway
-> I provisioned fictional departmental identities in Entra ID, organized assigned security groups, simulated an inappropriate HR-to-Finance group assignment, then removed it and verified the expected membership state. I documented the authorization risk without misrepresenting group membership as proven access to a production finance resource.
