@@ -3,7 +3,13 @@
 **Status:** In progress · **Environment:** Fictional Contoso Financial Services tenant · **Focus:** Identity and Access Management (IAM)
 
 ## Overview
-Hands-on enterprise IAM security scenarios using Microsoft Entra ID. The project models identity administration for a fictional financial services organization and documents security problems, design choices, implementation, verification, and remediation.
+The Enterprise Microsoft Entra ID IAM Lab is a hands-on cybersecurity project designed to simulate identity and access management operations within Contoso Financial Services, a fictional enterprise environment.
+
+The project demonstrates the design, implementation, testing, and validation of enterprise IAM security controls using Microsoft Entra ID.
+
+It covers identity lifecycle management, Role-Based Access Control (RBAC), Multi-Factor Authentication (MFA), Conditional Access, Privileged Identity Management (PIM), Identity Governance, External Identities, and Enterprise Application Access Management.
+
+Each implementation focuses on addressing realistic IAM security challenges through least-privilege access, identity lifecycle controls, privileged access protection, access reviews, and security validation.
 
 ## Business scenario
 Contoso Financial Services has IT, Finance, HR, Sales, and Security departments. IAM controls must ensure employees receive appropriate access, privileged actions are limited and auditable, access changes with employment status, and external partners are separated from the workforce.
