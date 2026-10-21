@@ -5,8 +5,6 @@
 ## Overview
 Hands-on enterprise IAM security scenarios using Microsoft Entra ID. The project models identity administration for a fictional financial services organization and documents security problems, design choices, implementation, verification, and remediation.
 
-This is a **self-directed lab, not production employment or a real customer deployment**. Screenshots and tests will be published progressively after sanitization.
-
 ## Business scenario
 Contoso Financial Services has IT, Finance, HR, Sales, and Security departments. IAM controls must ensure employees receive appropriate access, privileged actions are limited and auditable, access changes with employment status, and external partners are separated from the workforce.
 
