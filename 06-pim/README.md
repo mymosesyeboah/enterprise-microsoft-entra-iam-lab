@@ -1,4 +1,4 @@
-# Lab 06 — Privileged Identity Management (PIM)
+# Lab 06: Privileged Identity Management (PIM)
 
 ## Overview
 
