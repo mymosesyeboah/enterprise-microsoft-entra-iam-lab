@@ -1,4 +1,4 @@
-# Lab 10 - Workload Identities
+# Lab 09 - Workload Identities
 
 ## Overview
 
