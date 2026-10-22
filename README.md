@@ -8,7 +8,7 @@ The **Enterprise Microsoft Entra ID IAM Lab** is a hands-on cybersecurity portfo
 
 Built around a fictional financial-services organization, the project connects business requirements to practical IAM decisions. Each lab documents a security problem, the configuration or investigation performed, the evidence collected, and the observed result.
 
-The work spans workforce identities, role-based administration, multi-factor authentication, Conditional Access, joiner–mover–leaver processes, privileged access, access reviews, and external collaboration. Additional modules will extend the environment into enterprise applications, workload identities, monitoring, and automation.
+The work spans workforce identities, role-based administration, multi-factor authentication, Conditional Access, joiner-mover-leaver processes, privileged access, access reviews, and external collaboration. Additional modules will extend the environment into enterprise applications, workload identities, monitoring, and automation.
 
 ## Business scenario
 
@@ -27,23 +27,23 @@ The following modules have published case studies and supporting screenshots.
 
 | Lab | Focus | Demonstrated outcome |
 | --- | --- | --- |
-| [01 — Identity Foundation](01-identity-foundation/README.md) | Users and groups | Created departmental identities and security groups; identified and corrected inappropriate Finance group membership. |
-| [02 — RBAC and Least Privilege](02-rbac-least-privilege/README.md) | Administrative roles | Replaced excessive Global Administrator access with Helpdesk Administrator and tested intended and restricted actions. |
-| [03 — Authentication and MFA](03-authentication-mfa/README.md) | Authentication methods | Inspected authentication policy, Authenticator registration, sign-in evidence, and Temporary Access Pass use. |
-| [04 — Conditional Access](04-conditional-access/README.md) | Context-aware access | Evaluated MFA policies, tested location-based blocking, and examined emergency-access exclusions and sign-in results. |
-| [05 — Joiner–Mover–Leaver](05-joiner-mover-leaver/README.md) | Identity lifecycle | Created a Finance identity, investigated access accumulation during a Sales transfer, and validated leaver controls and blocked sign-in. |
-| [06 — Privileged Identity Management](06-pim/README.md) | Just-in-time administration | Changed a standing Helpdesk Administrator assignment to PIM eligibility, tested activation and deactivation, and reviewed audit evidence. |
-| [07 — Identity Governance](07-identity-governance/README.md) | Access Reviews | Conducted a Finance group review, recorded approval and denial decisions, and verified member removal and audit activity. |
-| [08 — External Identities](08-external-identities/README.md) | B2B collaboration | Examined guest invitation controls, verified invitation redemption, and placed an external auditor in a dedicated guest group. |
+| [01: Identity Foundation](01-identity-foundation/README.md) | Users and groups | Created departmental identities and security groups; identified and corrected inappropriate Finance group membership. |
+| [02: RBAC and Least Privilege](02-rbac-least-privilege/README.md) | Administrative roles | Replaced excessive Global Administrator access with Helpdesk Administrator and tested intended and restricted actions. |
+| [03: Authentication and MFA](03-authentication-mfa/README.md) | Authentication methods | Inspected authentication policy, Authenticator registration, sign-in evidence, and Temporary Access Pass use. |
+| [04: Conditional Access](04-conditional-access/README.md) | Context-aware access | Evaluated MFA policies, tested location-based blocking, and examined emergency-access exclusions and sign-in results. |
+| [05: Joiner-Mover-Leaver](05-joiner-mover-leaver/README.md) | Identity lifecycle | Created a Finance identity, investigated access accumulation during a Sales transfer, and validated leaver controls and blocked sign-in. |
+| [06: Privileged Identity Management](06-pim/README.md) | Just-in-time administration | Changed a standing Helpdesk Administrator assignment to PIM eligibility, tested activation and deactivation, and reviewed audit evidence. |
+| [07: Identity Governance](07-identity-governance/README.md) | Access Reviews | Conducted a Finance group review, recorded approval and denial decisions, and verified member removal and audit activity. |
+| [08: External Identities](08-external-identities/README.md) | B2B collaboration | Examined guest invitation controls, verified invitation redemption, and placed an external auditor in a dedicated guest group. |
 
 ### Work in progress
 
 | Planned module | Focus | Current boundary |
 | --- | --- | --- |
-| 09 — Enterprise Applications | Application assignment and federated sign-on | Application configuration and SAML settings have been explored; end-to-end SSO against a functioning service provider has **not** been demonstrated. |
-| 10 — Workload Identities | Service principals and application permissions | Case study not yet published. |
-| 11 — Monitoring and Investigation | Sign-in analysis, auditing, and identity investigations | Case study not yet published. |
-| 12 — Automation | PowerShell and Microsoft Graph IAM operations | Entra-focused automation case study not yet published. |
+| 09: Enterprise Applications | Application assignment and federated sign-on | Application configuration and SAML settings have been explored; end-to-end SSO against a functioning service provider has **not** been demonstrated. |
+| 10: Workload Identities | Service principals and application permissions | Case study not yet published. |
+| 11: Monitoring and Investigation | Sign-in analysis, auditing, and identity investigations | Case study not yet published. |
+| 12: Automation | PowerShell and Microsoft Graph IAM operations | Entra-focused automation case study not yet published. |
 
 ## How the labs are documented
 
@@ -91,4 +91,4 @@ This is an independently built simulation using a fictional organization, not a 
 
 ## Related project
 
-[Enterprise Active Directory IAM Lab](https://github.com/mymosesyeboah/enterprise-active-directory-iam-lab) — complementary on-premises directory and access-management work.
+[Enterprise Active Directory IAM Lab](https://github.com/mymosesyeboah/enterprise-active-directory-iam-lab): complementary on-premises directory and access-management work.
