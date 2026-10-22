@@ -61,9 +61,9 @@ The assigned reviewer could see the review under **My Access > Access reviews**.
 
 The reviewer opened the review and saw system recommendations for each member:
 
-- Ama Boateng — **Approve**
-- David Tetteh — **Deny**
-- Kwame Asare — **Deny**
+- Ama Boateng: **Approve**
+- David Tetteh: **Deny**
+- Kwame Asare: **Deny**
 
 ![Pending decisions with recommendations](evidence/05-reviewer-pending-decisions-with-recommendations.png)
 
@@ -71,9 +71,9 @@ The reviewer opened the review and saw system recommendations for each member:
 
 The reviewer submitted the following decisions:
 
-- Ama Boateng — **Approved**
-- David Tetteh — **Denied**
-- Kwame Asare — **Approved**
+- Ama Boateng: **Approved**
+- David Tetteh: **Denied**
+- Kwame Asare: **Approved**
 
 ![Decisions submitted](evidence/06-reviewer-decisions-submitted.png)
 
