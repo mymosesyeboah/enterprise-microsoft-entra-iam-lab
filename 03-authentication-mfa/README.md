@@ -1,4 +1,4 @@
-# Lab 03 — Authentication, MFA and Temporary Access Pass Recovery
+# Lab 03: Authentication, MFA and Temporary Access Pass Recovery
 
 ## Business scenario
 Contoso Financial Services must verify workforce identities using appropriately configured authentication methods, detect failed sign-ins, and provide a controlled recovery path when a user's usual authentication method is unavailable.
