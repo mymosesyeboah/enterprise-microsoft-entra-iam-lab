@@ -1,61 +1,73 @@
-# Lab 08 — External Identities and B2B Guest Collaboration
+# Lab 08 - External Identities and B2B Guest Collaboration
 
-## Scenario
+## Overview
 
-Contoso Financial Services (fictional lab organization) needs to onboard an external finance auditor without creating an internal employee identity or providing broad departmental access. The exercise focuses on B2B collaboration controls, invitation redemption, and narrowly scoped group membership.
+This lab demonstrates external identity management in Microsoft Entra ID using **B2B collaboration**. The exercise examined guest collaboration settings, created an external auditor identity, followed the invitation redemption lifecycle, and placed the guest in a dedicated security group rather than an internal Finance group.
 
 ## Objectives
 
-- Inspect external collaboration restrictions and invitation settings.
-- Examine a more restrictive guest-invitation option.
-- Create an external guest identity and observe the invitation lifecycle.
-- Verify acceptance of the invitation.
-- Place the guest in a dedicated external-auditor security group instead of the internal Finance group.
+- Review guest access and invitation restrictions in Microsoft Entra ID.
+- Examine a more restrictive guest invitation setting.
+- Invite an external collaborator as a B2B guest.
+- Verify the guest invitation transitions from pending acceptance to accepted.
+- Assign the guest to a dedicated external-auditor security group.
+- Verify the resulting group membership.
 
-## Implementation and evidence
+## Scenario
 
-| Evidence | Observation |
-| --- | --- |
-| [01 — Collaboration baseline](evidence/01-external-collaboration-baseline.png) | Guest directory access was limited; baseline invitation option was broadly permissive. |
-| [02 — Invitation setting selected](evidence/02-guest-invitation-setting-selected.png) | The portal shows the narrower option allowing members and selected administrator roles to invite guests. **The screenshot alone does not verify that this selection was saved.** |
-| [03 — Pending redemption](evidence/03-external-guest-pending-redemption.png) | Emily Johnson appears as a **Guest** with invitation state **Pending acceptance**, no group assignments, and an enabled account. |
-| [04 — Invitation accepted](evidence/04-external-guest-invitation-accepted.png) | The guest's B2B invitation state changes to **Accepted**. |
-| [05 — External auditor group](evidence/05-external-auditor-security-group-membership.png) | The guest appears as the one direct member of `SG-FINANCE-EXTERNAL-AUDITORS`. |
+Contoso Financial Services needed to collaborate with **Emily Johnson**, an external finance auditor. Because Emily was not an employee, the IAM design called for a **Guest** identity and a separate external-auditor group, **SG-FINANCE-EXTERNAL-AUDITORS**, rather than membership in **SG-FINANCE-USERS**.
 
-## Security design
+The goal was to demonstrate a controlled external onboarding workflow while distinguishing guest invitation, invitation redemption, group assignment, and actual application access.
 
-The external auditor was granted membership in a dedicated external-auditor group rather than the internal `SG-FINANCE-USERS` group. This supports least-privilege design and separates third-party identities from ordinary finance employees.
+## Technologies Used
 
-Guest **invitation**, **redemption**, **group membership**, and **resource authorization** are different lifecycle stages. An accepted invitation proves successful redemption, not entitlement to a particular application. Group membership is an authorization building block, but does not itself establish that a resource was configured to trust the group.
+- Microsoft Entra ID
+- External Identities / B2B Collaboration
+- External Collaboration Settings
+- Guest User Management
+- Security Groups
 
-## Validation outcomes
+## Implementation Steps
 
-**Observed:** Guest identity created, invitation pending, invitation accepted, and membership in the external-auditor security group.
+### 1. Reviewed external collaboration settings
 
-**Not demonstrated by these screenshots:** a saved policy change confirmation, successful sign-in to an actual finance application, resource-level positive/negative authorization testing, automated guest provisioning, or guest access expiration and removal.
+Inspected the tenant's external collaboration configuration. The baseline showed limited guest directory access, while guest invitations were broadly permitted.
 
-## Evidence handling
+![External collaboration baseline](evidence/01-external-collaboration-baseline.png)
 
-The screenshots were supplied from a self-directed lab. A personal external email address has been obscured in the shared screenshots; no password, temporary access pass, token, or invitation redemption URL is included. The duplicated image supplied under a separate invitation-configuration filename was intentionally excluded.
+### 2. Examined more restrictive guest invitation permissions
 
-## Further improvements
+Selected the option allowing **member users and users assigned to specific administrator roles** to invite guests. This was a least-privilege design consideration intended to reduce uncontrolled external invitations.
 
-A future extension could document an actual application assignment to this group, a successful guest access test, a non-member denial, cross-tenant restrictions, and review/removal of guest access. These steps should only be marked complete when verified.
+The screenshot records the selected option; it does **not** independently confirm the change was saved or became effective tenant-wide.
 
-## Screenshot Evidence
+![More restrictive guest invitation setting selected](evidence/02-guest-invitation-setting-selected.png)
 
-### 01 — External Collaboration Baseline
-![External Collaboration Baseline](evidence/01-external-collaboration-baseline.png)
+### 3. Created the external guest identity
 
-### 02 — Guest Invitation Settings
-![Guest Invitation Settings](evidence/02-guest-invitation-setting-selected.png)
+Invited Emily Johnson to the tenant as a B2B guest. The guest account appeared as **User type: Guest**, with **Pending acceptance** as the invitation status and no group memberships at this stage.
 
-### 03 — Guest Pending Redemption
-![Guest Pending Redemption](evidence/03-external-guest-pending-redemption.png)
+![Guest invitation pending acceptance](evidence/03-external-guest-pending-redemption.png)
 
-### 04 — Guest Invitation Accepted
-![Guest Invitation Accepted](evidence/04-external-guest-invitation-accepted.png)
+### 4. Verified invitation redemption
 
-### 05 — External Auditor Group Membership
-![External Auditor Group Membership](evidence/05-external-auditor-security-group-membership.png)
+After the invitation was accepted, the account's **B2B invitation state** changed to **Accepted**. This demonstrates successful guest invitation redemption, not yet access to a finance application.
 
+![Guest invitation accepted](evidence/04-external-guest-invitation-accepted.png)
+
+### 5. Assigned the guest to a dedicated external-auditor group
+
+Placed Emily Johnson in **SG-FINANCE-EXTERNAL-AUDITORS** and verified that she appeared as its direct member. Keeping external auditors separate from **SG-FINANCE-USERS** supports clearer access scoping and future review or removal of third-party access.
+
+![External auditor security group membership](evidence/05-external-auditor-security-group-membership.png)
+
+## Key Findings
+
+- Microsoft Entra B2B collaboration supports onboarding external identities as guests without classifying them as internal employees.
+- Guest invitation and redemption are separate from group assignment and application authorization.
+- A dedicated external-auditor security group provides a clearer basis for least-privilege access management than adding guests to internal departmental groups.
+- The collected evidence verifies guest creation, invitation acceptance, and group membership; it does not establish a completed application-level access test.
+
+## Outcome
+
+This lab demonstrated the B2B guest onboarding lifecycle for an external auditor and verified membership in a dedicated external-auditor security group. The resulting design separates third-party identities from internal Finance users and establishes a foundation for application assignment, access reviews, and eventual guest offboarding.
