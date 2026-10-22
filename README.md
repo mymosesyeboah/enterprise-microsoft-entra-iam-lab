@@ -1,6 +1,6 @@
 # Enterprise Microsoft Entra ID IAM Lab
 
-**Environment:** Contoso Financial Services (fictional enterprise) · **Focus:** Identity and Access Management (IAM) · **Project status:** In progress
+**Environment:** Contoso Financial Services (fictional enterprise) · **Focus:** Identity and Access Management (IAM) · **Project status:** 10 documented IAM labs
 
 ## Overview
 
@@ -8,7 +8,7 @@ The **Enterprise Microsoft Entra ID IAM Lab** is a hands-on cybersecurity portfo
 
 Built around a fictional financial-services organization, the project connects business requirements to practical IAM decisions. Each lab documents a security problem, the configuration or investigation performed, the evidence collected, and the observed result.
 
-The work spans workforce identities, role-based administration, multi-factor authentication, Conditional Access, joiner-mover-leaver processes, privileged access, access reviews, and external collaboration. Additional modules will extend the environment into enterprise applications, workload identities, monitoring, and automation.
+The work spans workforce identities, role-based administration, multi-factor authentication, Conditional Access, joiner-mover-leaver processes, privileged access, access reviews, external collaboration, workload identities, and read-only Microsoft Graph automation.
 
 ## Business scenario
 
@@ -35,15 +35,8 @@ The following modules have published case studies and supporting screenshots.
 | [06: Privileged Identity Management](06-pim/README.md) | Just-in-time administration | Changed a standing Helpdesk Administrator assignment to PIM eligibility, tested activation and deactivation, and reviewed audit evidence. |
 | [07: Identity Governance](07-identity-governance/README.md) | Access Reviews | Conducted a Finance group review, recorded approval and denial decisions, and verified member removal and audit activity. |
 | [08: External Identities](08-external-identities/README.md) | B2B collaboration | Examined guest invitation controls, verified invitation redemption, and placed an external auditor in a dedicated guest group. |
-
-### Work in progress
-
-| Planned module | Focus | Current boundary |
-| --- | --- | --- |
-| 09: Enterprise Applications | Application assignment and federated sign-on | Application configuration and SAML settings have been explored; end-to-end SSO against a functioning service provider has **not** been demonstrated. |
-| 10: Workload Identities | Service principals and application permissions | Case study not yet published. |
-| 11: Monitoring and Investigation | Sign-in analysis, auditing, and identity investigations | Case study not yet published. |
-| 12: Automation | PowerShell and Microsoft Graph IAM operations | Entra-focused automation case study not yet published. |
+| [09: Workload Identities](09-workload-identities/README.md) | Non-human identities | Created an app registration and service principal; authenticated with a certificate; verified Graph access, a forbidden request, ownership, and sign-in logging. |
+| [10: IAM Automation](10-iam-automation/README.md) | PowerShell reporting | Used delegated Microsoft Graph access to identify a disabled account and export and re-import a CSV report. |
 
 ## How the labs are documented
 
@@ -61,10 +54,12 @@ Screenshots are placed alongside the steps they support so readers can compare t
 - **Lifecycle management:** Address access changes for joiners, movers, and leavers.
 - **Access governance:** Periodically re-evaluate whether access should continue.
 - **Auditability:** Correlate configuration changes, positive and negative tests, and audit records.
+- **Workload identity security:** Protect application credentials, review app-only permissions, and assign accountable owners.
+- **Read-only automation:** Use Microsoft Graph to gather identity information and generate reviewable reports.
 
 ## Tools and technologies
 
-Microsoft Entra ID, Microsoft Authenticator, Conditional Access, Privileged Identity Management (PIM), Microsoft Entra Access Reviews, B2B Collaboration, Enterprise Applications, PowerShell, Git, GitHub, and Visual Studio Code.
+Microsoft Entra ID, Microsoft Authenticator, Conditional Access, Privileged Identity Management (PIM), Microsoft Entra Access Reviews, B2B Collaboration, App registrations, Enterprise applications (service principals), Microsoft Graph, Microsoft Graph PowerShell, X.509 certificates, PowerShell, CSV reporting, Git, GitHub, and Visual Studio Code.
 
 Available features and enforcement options depend on tenant configuration and licensing.
 
@@ -74,7 +69,7 @@ PowerShell validation scripts under [`scripts/`](scripts/) check individual lab 
 
 ```powershell
 # Run from the repository root
-.\scripts\Test-LabEvidence.ps1 -LabFolder "08-external-identities"
+.\scripts\Test-LabEvidence.ps1 -LabFolder "09-workload-identities"
 .\scripts\Test-AllLabs.ps1
 ```
 
@@ -86,7 +81,8 @@ This is an independently built simulation using a fictional organization, not a 
 
 - Screenshot evidence supports the specific configuration and results described in each case study.
 - B2B guest redemption and group membership do not, on their own, prove authorization to a deployed application.
-- The Finance Audit Portal exercise does not yet establish a working business application or successful end-to-end SAML federation.
+- The workload identity's final permission cleanup was not followed by a fresh app-only functional test; earlier app-only tests and audit events are documented.
+- The IAM automation lab demonstrates a manually executed, read-only CSV reporting workflow, not a scheduled unattended job.
 - Authentication secrets, recovery codes, tokens, and credentials must not be committed to the repository.
 
 ## Related project
