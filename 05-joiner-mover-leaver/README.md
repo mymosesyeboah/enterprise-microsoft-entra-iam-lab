@@ -1,4 +1,4 @@
-# Lab 05 — Joiner, Mover, Leaver (JML) Identity Lifecycle Management
+# Lab 05: Joiner, Mover, Leaver (JML) Identity Lifecycle Management
 
 ## Business scenario
 
@@ -12,7 +12,7 @@ Contoso Financial Services needs a controlled process for provisioning new emplo
 - Disable a departing employee account, revoke sign-in sessions, and remove remaining group membership.
 - Validate denied sign-in using the Microsoft Entra sign-in logs.
 
-## 1. Joiner — initial provisioning
+## 1. Joiner: initial provisioning
 
 Emily joined Contoso as a **Junior Financial Analyst** in **Finance**. Her job attributes reflected this role, and she was added to `SG-FINANCE-USERS`.
 
@@ -22,7 +22,7 @@ Emily joined Contoso as a **Junior Financial Analyst** in **Finance**. Her job a
 
 **Observed:** The directory listed Emily as a member of the Finance security group. This demonstrates group-based assignment, not access to a particular finance application.
 
-## 2. Mover — detect and remediate accumulated access
+## 2. Mover: detect and remediate accumulated access
 
 Emily transferred to **Sales** as an **Account Executive**. Her directory job attributes were changed to the new department and title.
 
@@ -38,7 +38,7 @@ The obsolete Finance membership was removed. The resulting membership list conta
 
 **Observed:** Unnecessary group membership was corrected. The screenshots do not independently prove that specific downstream application permissions were removed.
 
-## 3. Leaver — disable and clean up identity
+## 3. Leaver: disable and clean up identity
 
 When Emily left Contoso, her account was disabled.
 
