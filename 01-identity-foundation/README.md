@@ -1,4 +1,4 @@
-# Lab 01 — Identity Foundation and Least-Privilege Group Membership
+# Lab 01: Identity Foundation and Least-Privilege Group Membership
 
 ## Business context
 Contoso Financial Services, a fictional financial institution, uses Microsoft Entra ID to manage workforce identities across IT, Finance, HR, Sales, and Security. Departmental security groups provide an organizational basis for later application and resource assignments.
