@@ -1,4 +1,4 @@
-# Lab 02 — Administrative RBAC and Least-Privilege Validation
+# Lab 02: Administrative RBAC and Least-Privilege Validation
 
 ## Business scenario
 
@@ -102,7 +102,7 @@ The Add assignments control for Global Administrator was disabled for the delega
 
 ## Scope and limitations
 
-- The Helpdesk Administrator assignment remained **active and permanent** during Lab 2. It was subsequently converted to eligible, time-bound activation in **Lab 6 — Privileged Identity Management**. We do not present PIM as part of this lab.
+- The Helpdesk Administrator assignment remained **active and permanent** during Lab 2. It was subsequently converted to eligible, time-bound activation in **Lab 6: Privileged Identity Management**. We do not present PIM as part of this lab.
 - Password-reset capabilities vary with the administrator's role and the target user's privileges.
 - The password reset test did not assess helpdesk permissions for privileged administrator accounts or hybrid identities.
 - The negative test documents the visible portal restriction; it does not establish that all privilege escalation paths were tested.
