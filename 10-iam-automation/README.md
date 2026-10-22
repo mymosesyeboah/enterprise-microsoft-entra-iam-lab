@@ -1,4 +1,4 @@
-# Lab 12 - IAM Automation
+# Lab 10 - IAM Automation
 
 ## Overview
 
