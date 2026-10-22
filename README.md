@@ -1,62 +1,94 @@
 # Enterprise Microsoft Entra ID IAM Lab
 
-**Status:** In progress · **Environment:** Fictional Contoso Financial Services tenant · **Focus:** Identity and Access Management (IAM)
+**Environment:** Contoso Financial Services (fictional enterprise) · **Focus:** Identity and Access Management (IAM) · **Project status:** In progress
 
 ## Overview
-The Enterprise Microsoft Entra ID IAM Lab is a hands-on cybersecurity project designed to simulate identity and access management operations within Contoso Financial Services, a fictional enterprise environment.
 
-The project demonstrates the design, implementation, testing, and validation of enterprise IAM security controls using Microsoft Entra ID.
+The **Enterprise Microsoft Entra ID IAM Lab** is a hands-on cybersecurity portfolio project exploring how an organization can manage identities, enforce least privilege, protect authentication, govern access, and verify security controls across the identity lifecycle.
 
-It covers identity lifecycle management, Role-Based Access Control (RBAC), Multi-Factor Authentication (MFA), Conditional Access, Privileged Identity Management (PIM), Identity Governance, External Identities, and Enterprise Application Access Management.
+Built around a fictional financial-services organization, the project connects business requirements to practical IAM decisions. Each lab documents a security problem, the configuration or investigation performed, the evidence collected, and the observed result.
 
-Each implementation focuses on addressing realistic IAM security challenges through least-privilege access, identity lifecycle controls, privileged access protection, access reviews, and security validation.
+The work spans workforce identities, role-based administration, multi-factor authentication, Conditional Access, joiner–mover–leaver processes, privileged access, access reviews, and external collaboration. Additional modules will extend the environment into enterprise applications, workload identities, monitoring, and automation.
 
 ## Business scenario
-Contoso Financial Services has IT, Finance, HR, Sales, and Security departments. IAM controls must ensure employees receive appropriate access, privileged actions are limited and auditable, access changes with employment status, and external partners are separated from the workforce.
 
-## Implemented lab work
-| Module | Demonstrated work | Evidence status |
+Contoso Financial Services includes **IT, Finance, HR, Sales, and Security** departments. Its IAM program must help ensure that:
+
+- Users receive access appropriate to their responsibilities.
+- Administrative privileges are minimized and activated only when needed.
+- Authentication and access policies reduce the risk of unauthorized sign-ins.
+- Changes in employment or role trigger appropriate access changes.
+- Internal and external identities are governed separately.
+- Access decisions and remediation actions can be verified and audited.
+
+## Lab progress
+
+The following modules have published case studies and supporting screenshots.
+
+| Lab | Focus | Demonstrated outcome |
 | --- | --- | --- |
-| 01 — Identity foundation | Created fictional departmental identities and security groups; identified and corrected inappropriate Finance group membership | Narrative documented; screenshots pending redaction |
-| 02 — RBAC and least privilege | Tested overprivileged Global Administrator assignment; remediated to Helpdesk Administrator; performed positive and negative authorization checks | Narrative documented; screenshots pending redaction |
-| 03 — Authentication and MFA | Examined tenant method policy and user registration; tested Microsoft Authenticator; inspected unsuccessful and successful sign-in records; tested Temporary Access Pass use | Narrative documented; screenshots pending redaction |
-| 04 — Conditional Access | Validated Finance-pilot and all-users MFA policies, report-only evaluation, enforced location blocking, emergency-access exclusion, and restored access | [Case study published](04-conditional-access/README.md); evidence upload pending |
-| 05 — Joiner, mover, leaver | Provisioned Finance identity; detected and remediated access accumulation on transfer to Sales; disabled account, revoked sessions, and validated sign-in failure (50057) | [Case study published](05-joiner-mover-leaver/README.md); evidence upload pending |
-| 06 — Privileged Identity Management | Replaced a standing Helpdesk Administrator role with eligible assignment; configured MFA, justification, and limited activation; verified activation and deactivation audit events | Narrative documented; screenshots pending redaction |
-| 07 — Identity governance | Performed a Finance group access review, recorded approval/denial decisions, and verified group membership remediation and audit activity | Narrative documented; screenshots pending redaction |
-| 08 — External identities | Configured guest collaboration settings; invited and redeemed an external guest; separated guest access into a dedicated external-auditor group | Narrative documented; screenshots pending redaction |
-| 09 — Enterprise applications | Created a non-gallery enterprise application, required assignment, and assigned a Finance group and external guest; inspected SAML configuration | **SSO not completed or verified** |
+| [01 — Identity Foundation](01-identity-foundation/README.md) | Users and groups | Created departmental identities and security groups; identified and corrected inappropriate Finance group membership. |
+| [02 — RBAC and Least Privilege](02-rbac-least-privilege/README.md) | Administrative roles | Replaced excessive Global Administrator access with Helpdesk Administrator and tested intended and restricted actions. |
+| [03 — Authentication and MFA](03-authentication-mfa/README.md) | Authentication methods | Inspected authentication policy, Authenticator registration, sign-in evidence, and Temporary Access Pass use. |
+| [04 — Conditional Access](04-conditional-access/README.md) | Context-aware access | Evaluated MFA policies, tested location-based blocking, and examined emergency-access exclusions and sign-in results. |
+| [05 — Joiner–Mover–Leaver](05-joiner-mover-leaver/README.md) | Identity lifecycle | Created a Finance identity, investigated access accumulation during a Sales transfer, and validated leaver controls and blocked sign-in. |
+| [06 — Privileged Identity Management](06-pim/README.md) | Just-in-time administration | Changed a standing Helpdesk Administrator assignment to PIM eligibility, tested activation and deactivation, and reviewed audit evidence. |
+| [07 — Identity Governance](07-identity-governance/README.md) | Access Reviews | Conducted a Finance group review, recorded approval and denial decisions, and verified member removal and audit activity. |
+| [08 — External Identities](08-external-identities/README.md) | B2B collaboration | Examined guest invitation controls, verified invitation redemption, and placed an external auditor in a dedicated guest group. |
 
-## Security design principles
-- **Least privilege:** Choose the minimum necessary directory role and application assignment.
-- **Group-based access:** Prefer departmental or purpose-specific security groups over broad ad-hoc permissions.
-- **Just-in-time elevation:** Reduce permanent privilege with PIM where supported.
-- **Defense in depth:** Apply identity proofing, MFA, Conditional Access, and authorization controls in their respective layers.
-- **Verification:** Include successful and unsuccessful tests, audit trails, and before/after remediation evidence.
-- **Separation of identities:** Keep external auditors separate from internal employee access groups.
+### Work in progress
 
-## Technical environment
-Microsoft Entra ID; Microsoft Authenticator; Conditional Access; Privileged Identity Management (PIM); Access Reviews; B2B collaboration; Enterprise Applications. Exact availability depends on tenant licensing.
+| Planned module | Focus | Current boundary |
+| --- | --- | --- |
+| 09 — Enterprise Applications | Application assignment and federated sign-on | Application configuration and SAML settings have been explored; end-to-end SSO against a functioning service provider has **not** been demonstrated. |
+| 10 — Workload Identities | Service principals and application permissions | Case study not yet published. |
+| 11 — Monitoring and Investigation | Sign-in analysis, auditing, and identity investigations | Case study not yet published. |
+| 12 — Automation | PowerShell and Microsoft Graph IAM operations | Entra-focused automation case study not yet published. |
 
-## Lab documentation
-- [01 — Identity foundation](01-identity-foundation/README.md)
-- [02 — RBAC and least privilege](02-rbac-least-privilege/README.md)
-- [03 — Authentication and MFA](03-authentication-mfa/README.md)
-- [04 — Conditional Access](04-conditional-access/README.md)
-- [05 — Joiner, mover, leaver](05-joiner-mover-leaver/README.md)
-- Additional lab write-ups and **sanitized** evidence will be published incrementally.
+## How the labs are documented
 
-## Current limitations
-- **Finance Audit Portal** is an Entra enterprise application identity and assignment configuration, **not a deployed business web application**.
-- SAML configuration was examined, but no valid service-provider Entity ID / ACS URL was integrated; **end-to-end SSO is untested**.
-- Application assignments prove configured eligibility, not successful application sign-in or authorization inside a live application.
-- Screenshots and exports have not yet been published pending review for personal addresses, tenant identifiers, credentials, tokens, and recovery information.
+Each case study follows a consistent structure: **Overview → Objectives → Scenario → Technologies Used → Implementation Steps with Screenshots → Key Findings → Outcome**.
 
-## Evidence policy
-Publish only sanitized lab screenshots. Never commit passwords, Temporary Access Pass values, tokens, client secrets, unredacted personal email addresses, tenant IDs, subscription IDs, or sensitive support/billing information. Preserve enough of each image to prove the security decision and observed result.
+Screenshots are placed alongside the steps they support so readers can compare the stated action with the visible configuration, test, or audit result. Evidence is interpreted according to what it proves: for example, group membership is not automatically evidence of successful application access, and a report-only policy result is not an enforced access decision.
 
-## Related work
-[Enterprise Active Directory IAM Lab](https://github.com/mymosesyeboah/enterprise-active-directory-iam-lab)
+## Security principles demonstrated
 
-## Next steps
-Add sanitized evidence and detailed write-ups; complete real SAML SSO against a test service provider; expand into workload identities, monitoring, and automation.
+- **Least privilege:** Assign permissions based on the actual task, not convenience.
+- **Group-based access:** Use purpose-specific groups to make entitlements easier to manage.
+- **Just-in-time privilege:** Replace standing administrative access with eligible, time-bound activation where appropriate.
+- **Strong authentication:** Distinguish permitted authentication methods, user registration, and actual sign-in requirements.
+- **Conditional Access:** Evaluate access using policy scope, conditions, exclusions, and sign-in evidence.
+- **Lifecycle management:** Address access changes for joiners, movers, and leavers.
+- **Access governance:** Periodically re-evaluate whether access should continue.
+- **Auditability:** Correlate configuration changes, positive and negative tests, and audit records.
+
+## Tools and technologies
+
+Microsoft Entra ID, Microsoft Authenticator, Conditional Access, Privileged Identity Management (PIM), Microsoft Entra Access Reviews, B2B Collaboration, Enterprise Applications, PowerShell, Git, GitHub, and Visual Studio Code.
+
+Available features and enforcement options depend on tenant configuration and licensing.
+
+## Repository validation
+
+PowerShell validation scripts under [`scripts/`](scripts/) check individual lab folders and validate evidence references across the published labs.
+
+```powershell
+# Run from the repository root
+.\scripts\Test-LabEvidence.ps1 -LabFolder "08-external-identities"
+.\scripts\Test-AllLabs.ps1
+```
+
+These checks confirm documentation and evidence-file consistency; they do **not** independently verify live Microsoft Entra security settings.
+
+## Scope and evidence boundaries
+
+This is an independently built simulation using a fictional organization, not a production financial-services environment.
+
+- Screenshot evidence supports the specific configuration and results described in each case study.
+- B2B guest redemption and group membership do not, on their own, prove authorization to a deployed application.
+- The Finance Audit Portal exercise does not yet establish a working business application or successful end-to-end SAML federation.
+- Authentication secrets, recovery codes, tokens, and credentials must not be committed to the repository.
+
+## Related project
+
+[Enterprise Active Directory IAM Lab](https://github.com/mymosesyeboah/enterprise-active-directory-iam-lab) — complementary on-premises directory and access-management work.
